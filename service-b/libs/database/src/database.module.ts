@@ -29,6 +29,7 @@ import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
   exports: [...providers, dataBaseProvider,
     RabbitMQModule.forRoot(RabbitMQModule, {
       uri: 'amqp://guest:guest@localhost:5672',
+      prefetchCount:1,
       exchanges: [
         {
           name: 'exchange1',
@@ -37,7 +38,9 @@ import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
       ],
       connectionInitOptions: {
         wait: false,
+        
       },
+      
     }),],
 })
 export class DatabaseModule {}
