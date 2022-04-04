@@ -13,6 +13,8 @@ import { CustomerModule } from './controllers/customer/customer.module';
 import { LOGGER } from 'libs/domain/common/src/logger';
 import { ScheduleModule } from '@nestjs/schedule';
 import { CqrsModule } from '@nestjs/cqrs';
+import { DaprModule } from 'libs/infra/dapr/src';
+import { FooController } from './controllers/foo.controller';
 
 @Module({
   imports: [
@@ -27,8 +29,10 @@ import { CqrsModule } from '@nestjs/cqrs';
     CqrsModule,
     RequestContextModule,
     CustomerModule,
+    DaprModule,
+    DaprModule.subscribe('foo'),
   ],
-  controllers: [AppController],
+  controllers: [AppController,FooController],
   providers: [
     {
       provide: LOGGER,

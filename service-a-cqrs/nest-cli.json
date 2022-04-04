@@ -46,6 +46,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/aggregate/tsconfig.lib.json"
       }
+    },
+    "infra/dapr": {
+      "type": "library",
+      "root": "libs/infra/dapr",
+      "entryFile": "index",
+      "sourceRoot": "libs/infra/dapr/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/infra/dapr/tsconfig.lib.json"
+      }
     }
   },
   "monorepo": true,

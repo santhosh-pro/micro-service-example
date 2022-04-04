@@ -48,6 +48,12 @@
       ],
       "y/aggregate/*": [
         "libs/aggregate/src/*"
+      ],
+      "@app/infra/dapr": [
+        "libs/infra/dapr/src"
+      ],
+      "@app/infra/dapr/*": [
+        "libs/infra/dapr/src/*"
       ]
     }
   }
